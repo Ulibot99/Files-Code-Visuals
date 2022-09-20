@@ -36,8 +36,8 @@ SELECT
 	UserID,
 	COUNT(UserID)
 FROM (SELECT
-		CONCAT(CAST(Id AS VARCHAR), ':', CAST(date AS VARCHAR)) AS UserID
-	  FROM #DailyUserActivity) ui
+	CONCAT(CAST(Id AS VARCHAR), ':', CAST(date AS VARCHAR)) AS UserID
+	FROM #DailyUserActivity) ui
 GROUP BY 
 	UserID
 HAVING COUNT(UserID) > 1
